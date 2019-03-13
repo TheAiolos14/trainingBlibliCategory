@@ -1,6 +1,6 @@
 package com.category.category.controller;
 
-import com.category.category.Category;
+import com.category.category.entity.Category;
 import com.category.category.service.CategoryService;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

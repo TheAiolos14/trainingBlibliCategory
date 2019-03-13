@@ -1,5 +1,6 @@
 package com.category.category;
 
+import com.category.category.entity.Category;
 import com.category.category.service.CategoryServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
@@ -51,7 +52,7 @@ public class CategoryServiceTest {
         service.create(new Category("2", "Fashion"));
 
         Category category= service.findById("1");
-        Assert.assertTrue(category.getCategoryName().equals("Dua"));
+        Assert.assertTrue(category.getNameCategory().equals("Dua"));
 
         Assert.assertTrue("Harus ada Product", category != null);
 

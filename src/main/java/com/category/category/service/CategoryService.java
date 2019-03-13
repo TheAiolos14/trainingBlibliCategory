@@ -1,6 +1,6 @@
 package com.category.category.service;
 
-import com.category.category.Category;
+import com.category.category.entity.Category;
 
 import java.util.ArrayList;
 

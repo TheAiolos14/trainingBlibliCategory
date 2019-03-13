@@ -1,6 +1,7 @@
 package com.category.category.service;
 
-import com.category.category.Category;
+import com.category.category.entity.Category;
+import com.category.category.repository.CategoryRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ public class CategoryServiceImpl implements  CategoryService{
 
 
     private ArrayList<Category> list = new ArrayList<>();
+    private CategoryRepository categoryRepository;
 
     @Override
     public Category create(Category category) {
@@ -25,7 +27,7 @@ public class CategoryServiceImpl implements  CategoryService{
         for(int i=0;i<list.size();i++){
 
             Category newCategory = list.get(i);
-            if(id.compareTo(newCategory.getCategoryId()) == 0){
+            if(id.compareTo(newCategory.getNameCategory()) == 0){
                 return newCategory;
             }
             else{
@@ -45,7 +47,7 @@ public class CategoryServiceImpl implements  CategoryService{
     @Override
     public Category update(Category category) {
 
-        Category temp = findById(category.getCategoryId());
+        Category temp = findById(category.getNameCategory());
 
         if(temp == null){
             return  null;
@@ -62,7 +64,7 @@ public class CategoryServiceImpl implements  CategoryService{
 
             Category newCategory = list.get(i);
 
-            if(id.compareTo(newCategory.getCategoryId()) == 0){
+            if(id.compareTo(newCategory.getNameCategory()) == 0){
 
                 list.remove(newCategory);
 
